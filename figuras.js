@@ -1,57 +1,131 @@
 //Código del cuadrado
 console.group('Cuadrados')
-const ladoCuadrado = 5;
-console.log(`Los lados del cuadrado son: ${ladoCuadrado}cm`)
 
-const perimetroCuadrado = (ladoCuadrado * 4);
-console.log(`El perimetro del cuadrado es: ${perimetroCuadrado}`)
+function perimetroCuadrado(lado) {
+    return  lado * 4;
+}
 
-const areaCuadrado = (ladoCuadrado * 4);
-console.log(`El area del cuadrado es: ${ladoCuadrado * ladoCuadrado}cm2`)
+function areaCuadrado(lado) {
+ return lado * lado;
+} 
+
+function calcularPerimetroCuadrado() {
+    const input = document.getElementById('InputCuadrado')
+    const value = parseInt(input.value)
+
+    const perimetro = perimetroCuadrado(value);
+    alert(perimetro);
+}
+
+function calcularAreaCuadrado() {
+    const input = document.getElementById('InputCuadrado')
+    const value = input.value
+
+    const area = areaCuadrado(value);
+    alert(area);
+}
+
 console.groupEnd();
 
-//Código del triángulo
+
+//Código del triangulo
 console.group('Triangulos')
-const ladotriangulo1 = 6;
-const ladotriangulo2 = 6;
-const basetriangulo = 4;
 
-console.log(`Los lados del triangulo son: ${ladotriangulo1}cm ${ladotriangulo2}cm ${basetriangulo}cm`);
-const alturatriangulo = 5.5;
-console.log(`La altura del triangulo es: ${alturatriangulo}cm`);
+function perimetroTriangulo(lado1, lado2, base) {
+    return lado1 + lado2 + base
+}
 
-const perimetroTriangulo = ladotriangulo1 + ladotriangulo2 +basetriangulo;
-console.log(`El perimetro del triangulo es: ${perimetroTriangulo}cm`)
+function areaTriangulo(base, altura) {
+    return (base * altura) / 2;
+} 
 
-const areaTriangulo = (basetriangulo * alturatriangulo) / 2;
-console.log(`El area del triangulo es: ${areaTriangulo}cm2`)
+function calcularPerimetroTriangulo() {
+    const ladoA = document.getElementById('ladoA')
+    const ladoB = document.getElementById('ladoB')
+    const base = document.getElementById('base')
+
+    const value = parseInt(ladoA.value)
+    const value2 = parseInt(ladoB.value) 
+    const value3 = parseInt(base.value) 
+
+    const perimetro = perimetroTriangulo(value, value2, value3);
+    alert(perimetro);
+}
+
+function calcularAreaTriangulo() {
+    const base = document.getElementById('base')
+    const altura = document.getElementById('altura')
+    
+    const value = parseInt(base.value)
+    const value2 = parseInt(altura.value) 
+    
+    const area = areaTriangulo(value, value2)
+    alert(area)
+}
 
 console.groupEnd();
 
 //Código del circulo
 console.group('Circulos');
 
-//Radio
-const radioCirculo = 4;
-console.log(`El radio del circulo es: ${radioCirculo}cm`)
-
-//Diámetro
-const diametroCirculo = radioCirculo * 2;
-console.log(`El diámretro del circulo es: ${diametroCirculo}cm`)
+function diametroCirculo(radio) {
+    return radio * 2;
+} 
 
 //PI
 const PI = Math.PI;
 console.log(`Pi es: ${PI}`)
 
 //Circunferencia
-const perimetroCirculo = diametroCirculo * PI
-console.log(`La circunferencia del circulo es: ${perimetroCirculo}`)
+function perimetroCirculo(radio) {
+    const diametro = diametroCirculo(radio)
+    return diametro * PI
+}
 
 //Area
-const areaCiruclo = (radioCirculo * radioCirculo) * PI
-console.log(`El area del circulo es: ${areaCiruclo}cm2`)
+function areaCiruclo(radio) {
+    return (radio * radio) * PI;
+}
+
+function calcularDiametroCirculo() {
+    const radio = document.getElementById('circulo').value
+
+    const diametro = diametroCirculo(radio)
+    const perimetro = perimetroCirculo(diametro)
+    alert(perimetro)
+}
+
+function calcularAreaCirculo() {
+    const radio = document.getElementById('circulo').value
+
+    const area = areaCiruclo(radio)
+    alert(area)
+}
 
 console.groupEnd()
+
+//Triangulo Isoceles
+
+//Altura= raiz ladoA**2 - (base/2)**2 // **2 es elevación al cuadrado
+function trianguloIsoceles(ladoA, ladoB, base) {
+    if((ladoA === ladoB) && (ladoA != base)){
+        return Math.sqrt(ladoA**2 - (base / 2)**2)
+    }  
+}
+
+function calcularTrianguloIsoceles() {
+    const ladoA = parseInt(document.getElementById('dataA').value)
+    const ladoB = parseInt(document.getElementById('dataB').value)
+    const base = parseInt(document.getElementById('dataC').value)
+
+    const altura = trianguloIsoceles(ladoA, ladoB, base);
+    if(altura != undefined) {
+        alert(altura);
+    }else {
+        alert('No es un triangulo isoceles')
+    } 
+}
+
 
 
 
