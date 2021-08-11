@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacidad de ahorro</title>
+</head>
+<body>
+    <h1>Capacidad de ahorro</h1>
+    <form method="GET">
+        <p>Ingresos</p>
+        <input id="add" type="number" placeholder="Ingresa tu salario mensual">
+        <p>Gastos</p>
+        <input id="expenses" type="number" placeholder="Gastos Totales">
+        <button type="button" onclick="calcTotal()">Calcular</button>
+        <button type="reset">Limpiar</button>
+        <p id="total"></p>
+        <p id="description"></p>
+    </form>
+    
+    <script src="./ahorro.js"></script>
+</body>
+</html>
