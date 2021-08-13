@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../pages.css/descuentos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Porcentajes y Descuentos</title>
+</head>
+<body>
+    <section class="section__defaul">
+        <h1 class="title">Porcentajes y Descuentos</h1>
+        <form class="form">
+            <input id="precio" type="number" placeholder="Price"/>
+            <input id="coupon" type="text" placeholder="Coupon: #548754874" />
+            <br />
+            <button class="btn btn-primary" type="button" onclick="calcDiscountCoupon()">
+                Calcular descuento
+            </button>
+            <br />
+            <p class="text-primary" id="result"></p>
+        </form>
+    </section>
+    <script src="../pages.js/descuentos.js"></script>
+</body>
+</html>

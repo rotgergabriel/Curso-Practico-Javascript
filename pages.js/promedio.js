@@ -1,4 +1,3 @@
-
 function calcProm(list) {
     // let sumList = 0;
     // for (let i = 0; i < list.length; i++) {
@@ -14,5 +13,4 @@ function calcProm(list) {
     const prom = sumList/list.length
     return prom
 }
-
 
